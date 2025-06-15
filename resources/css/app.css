@@ -1,11 +1,218 @@
 @import 'tailwindcss';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+body{
+    font-family: 'Roboto', serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+.container{
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.row{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    background: #F7F7F7;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 10px 0;
+}
+
+header nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav img{
+   display: block;
+   width: 60px;
+}
+
+header nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+footer {
+    background: #F7F7F7;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #E0E0E0;
+}
+
+footer p{
+    margin-bottom: 0;
+}
+
+main{
+    padding: 50px 0;
+    min-height: calc(100vh - 158px);
+}
+
+h1, h2{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+hr{
+    margin: 10px 0;
+    border-color: #E0E0E0;
+}
+
+.cards-container{
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    margin: 40px auto 0 auto;
+}
+
+.cards-container a{
+    display: block;
+    width: 50%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 201, 227);
+    color: #333;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+    border: 1px solid #E0E0E0;
+}
+
+.cards-container a:hover{
+    opacity: 0.75;
+}
+
+.cards-container a:last-child{
+    background: #c7f0ff;
+}
+
+
+.order-form{
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #F7F7F7;
+    border-radius: 10px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.order-form .form-group{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-form input,.order-form select{
+    background: white;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+}
+
+.order-form #products-container > div{
+    margin-bottom: 15px;
+}
+
+.order-form button, header nav ul a{
+    display: block;
+    background: rgb(234, 59, 144);
+    color: white;
+    border: none;
+    width: 170px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.2s ease;
+}
+
+
+
+.order-form button:hover, header nav ul a:hover{
+    opacity: 0.75;
+}
+
+
+header nav ul a{
+    padding: 8px;
+    font-size: 14px;
+    width: auto;
+}
+header nav ul li:last-child a{
+    background: #01B0F0;
+}
+
+
+
+.complete-button{
+    display: block;
+    background: rgb(234, 59, 144);
+    color: white;
+    border: none;
+    width: auto;
+    text-align: center;
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+    transition: opacity 0.2s ease;
+}
+
+.complete-button:hover{
+    opacity: 0.75;
+}
+
+
+
+@media (max-width: 768px) {
+
+    main{
+        min-height: calc(100vh - 277px);
+    }
+    .cards-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cards-container a {
+        width: 100%;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
 }

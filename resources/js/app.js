@@ -1,1 +1,1 @@
-import './bootstrap';
+import './orders/orders.js';
